@@ -10,6 +10,8 @@ const io = require('socket.io')(http, {
     credentials: true
   }
 });
+
+const port = process.env.PORT || 8000
 //const cors = require('cors');
 
 //app.use(cors())
@@ -79,6 +81,6 @@ io.on('connection', socket => {
 })
 
 
-http.listen(2500, () => {
-  console.log("Listening on port 2500")
+http.listen(port, () => {
+  console.log(`Listening on port ${port}`)
 })
